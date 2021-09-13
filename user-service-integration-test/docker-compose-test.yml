@@ -1,0 +1,23 @@
+version: '3'
+services:
+  user-service:
+    container_name: user-service
+    hostname: user-service
+    image: nicolaibjerring/retros:user-service
+    restart: on-failure
+    environment:
+      - DB_HOST=db-test
+    ports:
+      - 8080
+      - 8090
+  db-test:
+    container_name: postgres-test
+    hostname: db
+    image: postgres:13.1
+    restart: on-failure
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=users
+    ports:
+      - 5432

@@ -1,0 +1,6 @@
+rootProject.name = 'user-service'
+include 'integration'
+include 'user-service-integration-test'
+include 'user-service'
+include 'user-service-processor'
+
